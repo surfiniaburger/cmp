@@ -12,7 +12,7 @@ import {
 import { createSalutation } from '@/app/lib/actions';
 import { Button } from '@/app/ui/button';
 
-export default function Form({ salutations }: { salutations: SalutationField[] }) {
+export default function Form() {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createSalutation, initialState);
   return (
@@ -31,14 +31,8 @@ export default function Form({ salutations }: { salutations: SalutationField[] }
               defaultValue=""
               aria-describedby="salutation-error"
             >
-              <option value="" disabled>
-                Select a customer
-              </option>
-              {salutations.map((salutation) => (
-                <option key={salutation.id} value={salutation.id}>
-                  {salutation.name}
-                </option>
-              ))}
+              
+              
             </select>
             <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
